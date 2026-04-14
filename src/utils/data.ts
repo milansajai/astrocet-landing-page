@@ -222,7 +222,7 @@ export const galleryItems: (GalleryBaseItem | GalleryActualItem)[] = [
   {
     title: "Observation Night",
     subtitle: "Telescope session on campus",
-    src: import.meta.env.BASE_URL + "gallery/galleryimg1.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg1.jpg",
   },
   {
     title: "Guest Lecture",
