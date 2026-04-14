@@ -137,25 +137,25 @@ export const pastEvents = [
     date: "MARCH 2024",
     title: "AI/ML for Space Exploration",
     detail: "Drishti’24 featured a standout AI/ML for Space Exploration workshop by AstroCET and HT Labs India. Over 70 participants learned Python-based data analysis and ML applications in astronomy, with hands-on experience using real astronomical data.",
-    image: "/events/event-aiml.jpg"
+    image: import.meta.env.BASE_URL + "events/event-aiml.jpg"
   },
   {
     date: "FEBRUARY 2024",
     title: "Global Science Festival Kerala",
     detail: "AstroCET's outreach at the ‘Global Science Festival Kerala’ featured Dr. Sarita Vig from IIST, inspiring students to pursue astronomy, followed by a sky-gazing session with the Breakthrough Science Society.",
-    image: "/events/event-outreach.jpg"
+    image: import.meta.env.BASE_URL + "events/event-outreach.jpg"
   },
   {
     date: "NOVEMBER 2023",
     title: "Expedition Aditya",
     detail: "Expedition Aditya, held on 26 November 2023 in collaboration with Shastra Snehi, focused on solar probing and sunspot viewing, bringing together experts and participants to explore the Sun's dynamics.",
-    image: "/events/event-aditya.jpg"
+    image: import.meta.env.BASE_URL + "events/event-aditya.jpg"
   },
   {
     date: "NOVEMBER 2023",
     title: "Pictura Astra Workshop",
     detail: "On 25 November 2023, ASTRO-CET hosted an astrophotography workshop with CET SHUTTERBUGS and AASTRO KERALA, led by renowned expert Sarath Prabhavu J.",
-    image: "/events/event-strophotography.jpg"
+    image: import.meta.env.BASE_URL + "events/event-strophotography.jpg"
   },
 ];
 
@@ -175,7 +175,7 @@ export const teamMembers: TeamMember[] = [
     role: "Chairperson",
     email: "naveen@example.com",
     linkedin: "https://www.linkedin.com/in/naveen-varma-539193259",
-    image: "/team/naveen.jpg",
+    image: import.meta.env.BASE_URL + "team/naveen.jpg",
     detail: "Leading the core coordination and club administration with a focus on sustainable observatory growth."
   },
   {
@@ -183,7 +183,7 @@ export const teamMembers: TeamMember[] = [
     role: "Vice Chairperson/Tech Lead",
     email: "melethabhinav@gmail.com",
     linkedin: "https://www.linkedin.com/in/saurav-s-39b097258",
-    image: "/team/saurav.jpg",
+    image: import.meta.env.BASE_URL + "team/saurav.jpg",
     detail: "Managing internal workshops and technical imaging sessions for members."
   },
   {
@@ -191,7 +191,7 @@ export const teamMembers: TeamMember[] = [
     role: "Vice Chairperson",
     email: "fidha@example.com",
     linkedin: "https://www.linkedin.com/in/fidha-v",
-    image: "/team/fidha.jpg",
+    image: import.meta.env.BASE_URL + "team/fidha.jpg",
     detail: "Overseeing outreach programs and student engagement initiatives across campus."
   },
   {
@@ -199,7 +199,7 @@ export const teamMembers: TeamMember[] = [
     role: "Finance Officer",
     email: "abhirami@example.com",
     linkedin: "https://www.linkedin.com/in/abhirami-p-s-525a18263",
-    image: "/team/abhirami.jpg",
+    image: import.meta.env.BASE_URL + "team/abhirami.jpg",
     detail: "Handling club finances, resource allocation, and project budgeting."
   },
   {
@@ -207,7 +207,7 @@ export const teamMembers: TeamMember[] = [
     role: "Secretary",
     email: "durga@example.com",
     linkedin: "https://www.linkedin.com/in/durga-madhusudanan-795a002a1",
-    image: "/team/durga.jpg",
+    image: import.meta.env.BASE_URL + "team/durga.jpg",
     detail: "Key coordinator for observation nights and sky mapping events."
   }
 ];
@@ -222,42 +222,42 @@ export const galleryItems: (GalleryBaseItem | GalleryActualItem)[] = [
   {
     title: "Observation Night",
     subtitle: "Telescope session on campus",
-    src: "/gallery/galleryimg1.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg1.JPG",
   },
   {
     title: "Guest Lecture",
     subtitle: "Dr. Sarita Vig's talk",
-    src: "/gallery/galleryimg2.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg2.JPG",
   },
   {
     title: "Club Recognition",
     subtitle: "Member appreciation session",
-    src: "/gallery/galleryimg3.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg3.JPG",
   },
   {
     title: "Outreach Program",
     subtitle: "Interactive session at CETAA Hall",
-    src: "/gallery/galleryimg4.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg4.JPG",
   },
   {
     title: "Team Pulse",
     subtitle: "Internal club workshop",
-    src: "/gallery/galleryimg5.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg5.JPG",
   },
   {
     title: "Observation",
     subtitle: "Guided Constellation Mapping",
-    src: "/gallery/galleryimg6.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg6.JPG",
   },
   {
     title: "School Visit",
     subtitle: "Astronomy for young minds",
-    src: "/gallery/galleryimg7.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleryimg7.JPG",
   },
   {
     title: "Sky Night",
     subtitle: "Deep sky imaging prep",
-    src: "/gallery/galleyimg8.JPG",
+    src: import.meta.env.BASE_URL + "gallery/galleyimg8.JPG",
   },
 ];
 
