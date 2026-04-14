@@ -44,7 +44,7 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
         {/* Right Column: Illustration/Image */}
         <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
           <img 
-            src={import.meta.env.BASE_URL + "gallery/galleryimg1.JPG"} 
+            src={import.meta.env.BASE_URL + "gallery/galleryimg2.JPG"} 
             alt="Observation Session" 
             className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
           />
@@ -55,3 +55,4 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
     </section>
   );
 }
+
