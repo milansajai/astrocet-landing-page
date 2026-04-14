@@ -5,7 +5,7 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
       id="top"
       className={`relative min-h-[90vh] flex flex-col justify-center px-4 pb-12 transition-all duration-1000 ${ready ? "opacity-100" : "opacity-0"}`}
     >
-      <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto w-full pt-10">
+      <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto w-full pt-32 md:pt-40 lg:pt-24">
         {/* Left Column: Text Content */}
         <div className="space-y-6">
           <h1 className={`text-6xl md:text-7xl font-black tracking-tight leading-[1.1] ${theme === 'light' ? 'text-black' : 'text-white'}`}>
