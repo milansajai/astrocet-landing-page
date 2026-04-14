@@ -1,5 +1,21 @@
-// AstroCET Hero Section Component
+import { useState } from "react";
+
 export default function HeroSection({ ready, theme }: { ready: boolean, theme: 'light' | 'dark' }) {
+  // Pick a random image on initial render
+  const [randomImage] = useState(() => {
+    const images = [
+      "galleryimg1.JPG",
+      "galleryimg2.JPG",
+      "galleryimg3.JPG",
+      "galleryimg4.JPG",
+      "galleryimg5.JPG",
+      "galleryimg6.JPG",
+      "galleryimg7.JPG",
+      "galleyimg8.JPG", // Typo in filename retained exactly
+    ];
+    return images[Math.floor(Math.random() * images.length)];
+  });
+
   return (
     <section 
       id="top" 
@@ -44,7 +60,7 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
         {/* Right Column: Illustration/Image */}
         <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
           <img 
-            src={import.meta.env.BASE_URL + "gallery/galleryimg2.JPG"} 
+            src={import.meta.env.BASE_URL + "gallery/" + randomImage} 
             alt="Observation Session" 
             className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
           />
@@ -55,4 +71,5 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
     </section>
   );
 }
+
 
