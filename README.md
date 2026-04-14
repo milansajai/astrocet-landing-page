@@ -14,7 +14,6 @@ The table below outlines our internal folder structure.
 |-----------|-------------|
 | **`/public/`** | Static assets like raw images and the vite svg. Files here are served as-is at the root path. |
 | **`/src/`** | The heart of the application structure. Contains `App.tsx`, reusable UI components, styling logic, and dynamic assets. |
-| **`/.gitignore`** | Tells git exactly which files/folders (like `node_modules` and `dist`) to avoid uploading to the repository. |
 | **`/index.html`** | The absolute main HTML document where the React application mounts itself. |
 | **`/package.json`** | Lists the project's details, scripts (like `npm run dev`), and all installed npm dependencies/packages. |
 | **`/package-lock.json`** | Locks the installed dependency structure to guarantee identical environments for anyone running the code. |
