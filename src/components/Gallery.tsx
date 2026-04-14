@@ -120,7 +120,7 @@ export default function Gallery({ ready, theme }: { ready: boolean, theme: 'ligh
             </div>
 
             <div className="text-center space-y-3">
-              <h3 className="text-white text-3xl md:text-5xl font-black font-bitcount tracking-[0.1em]">{processedItems[selectedIdx].title}</h3>
+              <h3 className="text-white text-3xl md:text-5xl font-black tracking-[0.1em]">{processedItems[selectedIdx].title}</h3>
               <p className="text-cyan-400 font-bold tracking-[0.3em] text-[10px] md:text-sm uppercase">{processedItems[selectedIdx].subtitle}</p>
             </div>
           </div>
