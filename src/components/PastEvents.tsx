@@ -80,7 +80,7 @@ function EventCard({ item, index, isExpanded, onToggle, theme }: any) {
         <time className={`text-xs font-semibold uppercase tracking-[0.4em] ${theme === 'light' ? 'text-cyan-600' : 'text-cyan-300'}`}>
           {item.date}
         </time>
-        <h3 className={`mt-4 text-3xl md:text-4xl font-black font-bitcount tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}>
+        <h3 className={`mt-4 text-3xl md:text-4xl font-black tracking-tight ${theme === 'light' ? 'text-black' : 'text-white'}`}>
           {item.title}
         </h3>
         
