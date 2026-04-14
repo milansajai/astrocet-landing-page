@@ -8,7 +8,7 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
       <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto w-full pt-10">
         {/* Left Column: Text Content */}
         <div className="space-y-6">
-          <h1 className={`text-6xl md:text-7xl font-bitcount font-black tracking-tight leading-[1.1] ${theme === 'light' ? 'text-black' : 'text-white'}`}>
+          <h1 className={`text-6xl md:text-7xl font-black tracking-tight leading-[1.1] ${theme === 'light' ? 'text-black' : 'text-white'}`}>
             WHERE CAMPUS <br />
             MEETS THE <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">
@@ -55,4 +55,3 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
     </section>
   );
 }
-
