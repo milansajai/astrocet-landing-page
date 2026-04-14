@@ -76,7 +76,7 @@ export default function Team({ ready, theme }: { ready: boolean, theme: 'light' 
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className={`text-xl font-black font-bitcount tracking-[0.05em] ${theme === 'light' ? 'text-black' : 'text-white'}`}>
+                    <h3 className={`text-xl font-black tracking-[0.05em] ${theme === 'light' ? 'text-black' : 'text-white'}`}>
                       {member.name}
                     </h3>
                     <p className="text-xs font-bold uppercase tracking-[0.3em] text-cyan-500">
