@@ -1,4 +1,4 @@
-=
+// AstroCET Hero Section Component
 export default function HeroSection({ ready, theme }: { ready: boolean, theme: 'light' | 'dark' }) {
   return (
     <section 
