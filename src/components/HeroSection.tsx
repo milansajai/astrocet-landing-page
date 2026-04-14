@@ -1,8 +1,8 @@
 // AstroCET Hero Section Component
 export default function HeroSection({ ready, theme }: { ready: boolean, theme: 'light' | 'dark' }) {
   return (
-    <section 
-      id="top" 
+    <section
+      id="top"
       className={`relative min-h-[90vh] flex flex-col justify-center px-4 pb-12 transition-all duration-1000 ${ready ? "opacity-100" : "opacity-0"}`}
     >
       <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto w-full pt-10">
@@ -17,23 +17,23 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
           </h1>
 
           <p className={`text-lg md:text-xl max-w-xl leading-relaxed font-medium ${theme === 'light' ? 'text-slate-600' : 'text-slate-300'}`}>
-            AstroCET is the esteemed astronomy club of the College of Engineering Trivandrum (CET). 
+            AstroCET is the esteemed astronomy club of the College of Engineering Trivandrum (CET).
             AstroCET has embarked on a journey of astronomical proportions over the past year.
           </p>
 
 
           <div className="flex flex-wrap items-center gap-6 pt-2">
-            <a 
-              href="#announcements" 
+            <a
+              href="#announcements"
               className={`rounded-full px-8 py-4 text-sm font-bold transition-all hover:scale-105 active:scale-95 ${theme === 'light' ? 'bg-black text-white hover:bg-slate-800' : 'bg-white text-black hover:bg-slate-200'}`}
             >
               UPCOMING NIGHTS →
             </a>
-            <a 
-              href="#gallery" 
+            <a
+              href="#gallery"
               className={`flex items-center gap-2 text-sm font-bold transition-colors ${theme === 'light' ? 'text-slate-900 hover:text-cyan-600' : 'text-white hover:text-cyan-400'}`}
             >
-              CAPTURED STILLS 
+              CAPTURED STILLS
               <span className="flex items-center justify-center w-6 h-6 rounded-full border border-current">
                 <span className="ml-0.5 mt-0.5 border-t-[4px] border-t-transparent border-l-[6px] border-l-current border-b-[4px] border-b-transparent"></span>
               </span>
@@ -43,9 +43,9 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
 
         {/* Right Column: Illustration/Image */}
         <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-          <img 
-            src={import.meta.env.BASE_URL + "gallery/galleryimg1.JPG"} 
-            alt="Observation Session" 
+          <img
+            src={import.meta.env.BASE_URL + "gallery/galleryimg1.JPG"}
+            alt="Observation Session"
             className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
           />
           <div className={`absolute inset-0 ring-1 ring-inset ${theme === 'light' ? 'ring-black/5' : 'ring-white/10'}`} />
@@ -55,3 +55,4 @@ export default function HeroSection({ ready, theme }: { ready: boolean, theme: '
     </section>
   );
 }
+
