@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --background: #ffffff;
+    --foreground: #000000;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #000000;
+    --accent-foreground: #ffffff;
+    --card-bg: #f8fafc;
+    --navy: #02030a;
+    --deep: #050816;
+    --cyan-glow: rgba(34, 211, 238, 0.4);
+    --violet-glow: rgba(139, 92, 246, 0.4);
+    --star-color: rgba(15, 23, 42, 0.9);
+    --nebula-opacity: 0;
+  }
+
+  [data-theme='dark'] {
+    --background: #02030a;
+    --foreground: #f8fafc;
+    --muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #ffffff;
+    --accent-foreground: #000000;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --star-color: rgba(255, 255, 255, 0.95);
+    --nebula-opacity: 0.8;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: rgba(168, 85, 247, 0.35);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .font-bitcount {
+    font-family: "Bitcount Grid Double", "Bitcount Grid Double Ink Variable", monospace;
+  }
+
+  /* ── Background Effects (GPT) ── */
+  .space-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .space-bg::before,
+  .space-bg::after {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    will-change: transform;
+  }
+
+  .space-bg::before {
+    background-image:
+      radial-gradient(circle at 8% 12%, var(--star-color) 0 0.8px, transparent 1.6px),
+      radial-gradient(circle at 18% 30%, var(--star-color) 0 0.7px, transparent 1.5px),
+      radial-gradient(circle at 25% 68%, var(--star-color) 0 1px, transparent 1.7px),
+      radial-gradient(circle at 32% 16%, var(--star-color) 0 0.7px, transparent 1.3px),
+      radial-gradient(circle at 44% 76%, var(--star-color) 0 1px, transparent 1.7px),
+      radial-gradient(circle at 51% 24%, var(--star-color) 0 0.65px, transparent 1.4px),
+      radial-gradient(circle at 61% 13%, var(--star-color) 0 0.85px, transparent 1.6px),
+      radial-gradient(circle at 72% 37%, var(--star-color) 0 0.7px, transparent 1.5px),
+      radial-gradient(circle at 79% 70%, var(--star-color) 0 1px, transparent 1.8px),
+      radial-gradient(circle at 87% 18%, var(--star-color) 0 0.65px, transparent 1.3px),
+      radial-gradient(circle at 93% 51%, var(--star-color) 0 0.9px, transparent 1.7px),
+      radial-gradient(circle at 14% 84%, var(--star-color) 0 0.7px, transparent 1.4px),
+      radial-gradient(circle at 36% 51%, var(--star-color) 0 0.8px, transparent 1.5px),
+      radial-gradient(circle at 48% 43%, var(--star-color) 0 0.7px, transparent 1.4px),
+      radial-gradient(circle at 66% 86%, var(--star-color) 0 0.95px, transparent 1.6px),
+      radial-gradient(circle at 88% 82%, var(--star-color) 0 0.7px, transparent 1.4px);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
+    animation: star-drift-a 92s linear infinite, star-twinkle 4s ease-in-out infinite;
+  }
+
+  .space-bg::after {
+    background-image:
+      radial-gradient(circle at 11% 20%, rgba(167, 139, 250, 0.75) 0 1px, transparent 1.8px),
+      radial-gradient(circle at 23% 44%, rgba(56, 189, 248, 0.55) 0 0.8px, transparent 1.5px),
+      radial-gradient(circle at 29% 77%, rgba(255, 255, 255, 0.72) 0 0.95px, transparent 1.7px),
+      radial-gradient(circle at 39% 26%, rgba(255, 255, 255, 0.42) 0 0.7px, transparent 1.4px),
+      radial-gradient(circle at 54% 18%, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.8px),
+      radial-gradient(circle at 63% 64%, rgba(196, 181, 253, 0.62) 0 0.85px, transparent 1.6px),
+      radial-gradient(circle at 71% 8%, rgba(255, 255, 255, 0.48) 0 0.7px, transparent 1.4px),
+      radial-gradient(circle at 84% 35%, rgba(255, 255, 255, 0.68) 0 0.9px, transparent 1.6px),
+      radial-gradient(circle at 96% 71%, rgba(56, 189, 248, 0.48) 0 0.8px, transparent 1.5px),
+      radial-gradient(circle at 18% 90%, rgba(255, 255, 255, 0.82) 0 0.95px, transparent 1.7px),
+      radial-gradient(circle at 46% 90%, rgba(255, 255, 255, 0.4) 0 0.7px, transparent 1.4px),
+      radial-gradient(circle at 74% 89%, rgba(255, 255, 255, 0.78) 0 0.95px, transparent 1.7px);
+    opacity: 0.55;
+    filter: blur(0.15px);
+    animation: star-drift-b 128s linear infinite reverse;
+  }
+
+  .nebula {
+    position: fixed;
+    inset: 10% 8%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 20% 24%, rgba(124, 58, 237, 0.24), transparent 32%),
+      radial-gradient(circle at 74% 22%, rgba(56, 189, 248, 0.14), transparent 26%),
+      radial-gradient(circle at 48% 70%, rgba(236, 72, 153, 0.1), transparent 32%);
+    filter: blur(34px);
+    opacity: 0.8;
+    animation: nebula-breathe 18s ease-in-out infinite;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
+  }
+
+  /* ── Loader (GPT) ── */
+  .loader-word {
+    text-shadow:
+      0 0 14px rgba(168, 85, 247, 0.36),
+      0 0 34px rgba(56, 189, 248, 0.16);
+    animation: loader-breathe 3.2s ease-in-out infinite;
+  }
+
+  /* ── Animations (GPT/Claude) ── */
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal-left.visible,
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .lift-hover {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .lift-hover:hover {
+    transform: translateY(-0.75rem) scale(1.08);
+    box-shadow:
+      0 30px 60px rgba(3, 7, 20, 0.5),
+      0 0 0 2px rgba(168, 85, 247, 0.4);
+    z-index: 10;
+  }
+
+  /* ── Dividers (Claude) ── */
+  .cosmic-divider {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+  opacity: 0.5;
+  margin: 4rem 0;
+}
+}
+
+  /* ── Lightbox Animations ── */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes zoom-in-95 {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .animate-in {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-fill-mode: forwards;
+  }
+
+  .fade-in {
+    animation-name: fade-in;
+  }
+
+  .zoom-in-95 {
+    animation-name: zoom-in-95;
+  }
+
+  /* ── Star Twinkle Animations ── */
+  @keyframes star-twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+  }
+
+  @keyframes star-twinkle-light {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 0; transform: scale(0.5); }
+  }
+
+  /* ── Spacing Tweaks ── */
+  #announcements {
+    margin-top: 10rem; /* Give more space after Hero */
+  }
+
+  /* ── Galactic Orbits (The 'MAKE IT MOVE' Fix) ── */
+  .orbit-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 9999px;
+    pointer-events: none;
+    border: 2px solid var(--border);
+    opacity: 0.55;
+    will-change: transform;
+    transition: opacity 0.3s ease;
+  }
+
+
+  .orbit-spin-cw {
+    animation: orbital-spin var(--orbit-speed, 40s) linear infinite;
+    animation-delay: var(--orbit-delay, 0s);
+  }
+
+  .orbit-spin-ccw {
+    animation: orbital-spin-reverse var(--orbit-speed, 40s) linear infinite;
+    animation-delay: var(--orbit-delay, 0s);
+  }
+
+  .planet-counter-cw {
+    animation: orbital-counter var(--orbit-speed, 40s) linear infinite;
+    animation-delay: var(--orbit-delay, 0s);
+  }
+
+  .planet-counter-ccw {
+    animation: orbital-spin var(--orbit-speed, 40s) linear infinite;
+    animation-delay: var(--orbit-delay, 0s);
+  }
+
+  @keyframes orbital-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  @keyframes orbital-spin-reverse {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(-360deg); }
+  }
+
+  @keyframes orbital-counter {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(-360deg); }
+  }
+
+  .orbit-tilt-1 { transform: translate(-50%, -50%) rotateX(25deg) rotateY(10deg); }
+  .orbit-tilt-2 { transform: translate(-50%, -50%) rotateX(-15deg) rotateY(-20deg); }
+  .orbit-tilt-3 { transform: translate(-50%, -50%) rotateX(10deg) rotateY(25deg); }
+
+
+  /* ── Team Infinite Odyssey ── */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Optional Auto-Scroll if preferred, otherwise snap takes over */
+  @keyframes team-auto-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .team-scroll-auto {
+    animation: team-auto-scroll 60s linear infinite;
+  }
+  .team-scroll-auto:hover {
+    animation-play-state: paused;
+  }
+
+@keyframes star-drift-a {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-1.4%, 1.2%, 0) scale(1.01); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes star-drift-b {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(1.1%, -1%, 0) scale(1.02); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes nebula-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.68; }
+  50% { transform: scale(1.05); opacity: 0.92; }
+}
+
+@keyframes loader-breathe {
+  0%, 100% { transform: translateY(0) scale(0.995); opacity: 0.78; }
+  50% { transform: translateY(-0.16rem) scale(1); opacity: 1; }
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #02030a; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #7c3aed, #38bdf8); border-radius: 3px; }
